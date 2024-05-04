@@ -1,0 +1,14 @@
+:host{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    font-family: 'gotFont';
+}
+p{
+    font-size: 4rem;
+}

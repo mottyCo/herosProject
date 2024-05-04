@@ -1,0 +1,60 @@
+:host{
+    position: fixed;
+    display: block;
+    width: 5rem;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: 	#7c3f00;
+}
+.link{
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+    opacity: 0.6;
+}
+.link:hover{
+    opacity: 0.3;
+}
+.user-image-link{
+    background-image: url('../../icons/user-circle.svg');  
+}
+.all-card-collection-link{
+    background-image: url('../../icons/cards-three.svg');
+    transform: rotate(90deg);
+}
+.users-collection-link{
+    background-image: url('../../icons/users-three.svg');
+}
+.settings-link{
+    background-image: url('../../icons/gear.svg');
+    margin-bottom: 2rem;
+}
+.nav{
+    height: 100vh;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+}
+.top-nav-link{
+    margin-top: 2rem;
+}
+.active{
+    transform: scale(1.4);
+    opacity: 1;
+}
+.all-card-collection-link.active{
+    transform: scale(1.4) rotate(90deg);
+}
+.active:hover{
+    opacity: 1;
+}
