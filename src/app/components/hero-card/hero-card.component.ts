@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-hero-card',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './hero-card.component.css'
 })
 export class HeroCardComponent {
+
+  @Input() heroname! : string
+  @Input() heroImageUrl! : string
+  @Input() heroQuote! : string
 
 }
