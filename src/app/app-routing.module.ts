@@ -5,10 +5,16 @@ import { UserSectionComponent } from './components/user-section/user-section.com
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { UsersSectionComponent } from './components/users-section/users-section.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 export const routes: Routes = [
   {path: 'heros-collection', component: CardsCollectionComponent},
-  {path: 'user', component: UserSectionComponent, pathMatch: 'full'},
+  {path: 'user', component: UserSectionComponent, children: [
+    {path: 'login', component: LoginComponent},
+    {path: 'signup', component: SignupComponent},
+    {path: '**', component: LoginComponent}
+  ]},
   {path: 'users', component: UsersSectionComponent, pathMatch: 'full'},
   {path: 'settings', component: SettingsComponent},
   {path: '', redirectTo: 'heros-collection', pathMatch: 'full'},

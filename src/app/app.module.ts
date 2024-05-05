@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { UsersSectionComponent } from './components/users-section/users-section.
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -25,11 +28,15 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
     SettingsComponent,
     PageNotFoundComponent,
     HeroCardComponent,
+    LoginComponent,
+    SignupComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [    UsersService, ],
   bootstrap: [AppComponent]

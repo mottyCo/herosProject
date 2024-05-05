@@ -1,0 +1,17 @@
+<div class="container">
+    <h4>log in</h4>
+    <span></span>
+    <form [formGroup]="loginForm" id="form" >
+        <label for="username">user name</label>
+        <input type="text" name="username" id="" placeholder="user name" formControlName="UserName">
+        <p class="invalid-message" *ngIf="username.touched && username.invalid">{{ userNameInvalidMessage() }}</p>
+        <label for="password">password</label>
+        <input type="text" name="password" placeholder="password" formControlName="Password">
+        <p class="invalid-message" *ngIf="password.touched && password.invalid">{{ passworsInvalidMessage() }}</p>
+        <button type="button" (click)="onSubmit()">login</button>
+        <div class="singup-link">
+            <p>not sign up yet?</p>
+            <a (click)="navToSignup()">sign up</a>
+        </div>
+    </form>
+</div>

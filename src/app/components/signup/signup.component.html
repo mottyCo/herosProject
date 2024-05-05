@@ -1,0 +1,23 @@
+<div class="container">
+    <h4>sign up</h4>
+    <span></span>
+    <form [formGroup]="loginForm" id="form" >
+        <label for="username">user name</label>
+        <input type="text" name="username" id="" placeholder="user name" formControlName="UserName">
+        <p class="invalid-message" *ngIf="username.touched && username.invalid">{{ userNameInvalidMessage() }}</p>
+        <label for="email">e mail</label>
+        <input type="email" name="email" id="" placeholder="e-mail" formControlName="Email">
+        <p class="invalid-message" *ngIf="email.touched && email.invalid">{{ emailInvalidMessage() }}</p>
+        <label for="password">password</label>
+        <input type="text" name="password" placeholder="password" formControlName="Password">
+        <p class="invalid-message" *ngIf="password.touched && password.invalid">{{ passworsInvalidMessage() }}</p>
+        <label for="repeatPassword">repeat password</label>
+        <input type="text" name="repeatPassword" placeholder="repeat password" formControlName="RepeatPassword">
+        <p class="invalid-message" *ngIf="repeatPassword.touched && loginForm.invalid">{{ repeatPassworsInvalidMessage() }}</p>
+        <button type="button" (click)="onSubmit()">sign up</button>
+        <div class="singup-link">
+            <p>are you signup already?</p>
+            <a (click)="navToLogin()">log in</a>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { Hero } from '../interfaces/hero';
 
 @Injectable({
   providedIn: 'root'
@@ -7,78 +7,20 @@ import { Injectable } from '@angular/core';
 
 export class HerosServiseService {
  
-  private jaimeLannister = {
-    name: 'jaime lannister',
-    quote: 'If there are gods, why is the world so full of pain and injustice?',
-    image: 'jaimeLannister.jpg'
-  }
-  private bronnOfBlackwater = {
-    name: 'bronn of blackwater',
-    quote: 'I saw you kill a man with a shield, you`ll be unstoppable with an axe',
-    image: 'bronn.jpeg'
-  }
-  private jonSnow = {
-    name: 'jon snow',
-    quote: 'First lesson: stick em with the pointy end.',
-    image: 'jonSnow.jpg'
-  }
-  private sandorClegane = {
-    name: 'sandor clegane',
-    quote: 'Any man dies with a clean sword, I`ll rape his fucking corpse!',
-    image: 'theHound.jpeg'
-  }
-  private oberynMartell = {
-    name: 'oberyn martell',
-    quote: 'Size Doesn`t Matter When You`re Flat On Your Back.',
-    image: 'oberynMartell.jpeg'
-  }
-  private syrioForel = {
-    name: 'syrio forel',
-    quote: 'There is only one God, and his name is Death. And there is only one thing we say to Death: Not Today!',
-    image: 'syrioForel.jpg'
-  }
-  private euronGreyjoy = {
-    name: 'euron Greyjoy',
-    quote: 'The last Greyjoys left in the world. The last ones with balls anyway. If I kill you... who can I talk to?',
-    image: 'euronGreyjoy.jpg'
-  }
-  private barristanSelmy = {
-    name: 'barristan Selmy',
-    quote: 'I`ve won more single combats than any man alive.',
-    image: 'barristanSelmy.jpg'
-  }
-  private robertBaratheon = {
-    name: 'robert Baratheon',
-    quote: 'Wear it in silence or I`ll honor you again.',
-    image: 'robertBaratheon.jpg'
-  }
-  private lorasTyrell = {
-    name: 'loras tyrell',
-    quote: 'Everybody knows everything about everyone',
-    image: 'lorasTyrell.jpg'
-  }
-  private brienneOfTarth = {
-    name: 'brienne Of Tarth',
-    quote: 'I Don`t Care, I`m Not Your Mother.',
-    image: 'brienne.jpg'
-  }
-  private gregorClegane = {
-    name: 'gregor clegane',
-    quote: 'I killed her screaming whelp. Then I raped her. Then I smashed her fucking head in. Like this.',
-    image: 'theMountain.jpg'
-  }
-  private aryaStark = {
-    name: 'arya Stark',
-    quote: 'It`s Where All The Maps Stop. That`s Where I`m Going',
-    image: 'aryaStark.jpg'
-  }
-  private tormundGiantsbane = {
-    name: 'tormund Giantsbane',
-    quote: 'From Now On, You`d Better Kneel Every Time I Fart.',
-    image: 'tormund.jpg'
-  }
-
-
+  private jaimeLannister : Hero = new Hero('jaime lannister', 'If there are gods, why is the world so full of pain and injustice?', 'jaimeLannister.jpg')
+  private bronnOfBlackwater: Hero = new Hero('bronn of blackwater','I saw you kill a man with a shield, you`ll be unstoppable with an axe','bronn.jpeg')
+  private jonSnow : Hero = new Hero('jon snow','First lesson: stick em with the pointy end.','jonSnow.jpg')
+  private sandorClegane : Hero = new Hero('sandor clegane','Any man dies with a clean sword, I`ll rape his fucking corpse!','theHound.jpeg')
+  private oberynMartell : Hero = new Hero('oberyn martell','Size Doesn`t Matter When You`re Flat On Your Back.','oberynMartell.jpeg')
+  private syrioForel : Hero = new Hero('syrio forel','There is only one God, and his name is Death. And there is only one thing we say to Death: Not Today!','syrioForel.jpg')
+  private euronGreyjoy : Hero = new Hero('euron Greyjoy','The last Greyjoys left in the world. The last ones with balls anyway. If I kill you... who can I talk to?','euronGreyjoy.jpg')
+  private barristanSelmy : Hero = new Hero('barristan Selmy','I`ve won more single combats than any man alive.','barristanSelmy.jpg')
+  private robertBaratheon : Hero = new Hero('robert Baratheon','Wear it in silence or I`ll honor you again.','robertBaratheon.jpg')
+  private lorasTyrell : Hero = new Hero('loras tyrell','Everybody knows everything about everyone', 'lorasTyrell.jpg')
+  private brienneOfTarth : Hero = new Hero('brienne Of Tarth','I Don`t Care, I`m Not Your Mother.','brienne.jpg')
+  private gregorClegane : Hero = new Hero('gregor clegane','I killed her screaming whelp. Then I raped her. Then I smashed her fucking head in. Like this.','theMountain.jpg')
+  private aryaStark : Hero = new Hero('arya Stark','It`s Where All The Maps Stop. That`s Where I`m Going','aryaStark.jpg')
+  private tormundGiantsbane : Hero = new Hero('tormund Giantsbane','From Now On, You`d Better Kneel Every Time I Fart.','tormund.jpg')
   getHeros(){
     return [
       this.jaimeLannister,
