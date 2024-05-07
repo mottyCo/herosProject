@@ -34,6 +34,7 @@ export class LocalUserSectionComponent {
     for(let hero of this.globalHerosCollection){
       if(hero.name === heroName){
         this.userHerosCollection.push(new Hero(hero.name, hero.quote, hero.image))
+        console.log(this.users.localUser?.heros);
         return null
       }
     }

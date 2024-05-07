@@ -1,1 +1,14 @@
-<p>users</p>
+<div class="container">
+    <div class="users-profiles-section">
+        <div *ngFor="let user of usersArray" class="profile" (click)="displayUserCard(user)" [ngClass]="{'active' : correntUser !== null && correntUser.userName === user.userName}">
+            <img src="../../../assets/images/user-circle (2).png" alt="user photo">
+            <p>{{ user.userName}}</p>
+        </div>
+    </div>
+    <span></span>
+    <div *ngIf="correntUser!=null" class="user-cards-section">
+        <div *ngFor="let hero of correntUser.heros" class="card-container">
+            <app-hero-card class="max-height"   [heroImageUrl]="'../../../assets/images/' +hero.image" [heroname]="hero.name" [heroQuote]="hero.quote" [heroStars]="hero.stars"></app-hero-card>
+        </div>
+    </div>
+</div>

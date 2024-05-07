@@ -10,7 +10,7 @@ export class UsersService {
   private user3 : User = new User('userc', 'c@c', 'ccccccc1')
   private user4 : User = new User('userd', 'd@d', 'eeeeeee1')
   private user5 : User = new User('usere', 'e@e', 'fffffff1')
-  localUser : User | null = new User('usera', 'a@a', 'aaaaaaa1')
+  localUser : User | null = null
   users: User[] = [
     this.user1,
     this.user2,
