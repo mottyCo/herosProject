@@ -1,13 +1,14 @@
 <div class="container">
     <h4>log in</h4>
     <span></span>
+    <p *ngIf="disaplayIncorrectMessage" class="invalid-message">{{ incorrectMessage }}</p>
     <form [formGroup]="loginForm" id="form" >
         <label for="username">user name</label>
         <input type="text" name="username" id="" placeholder="user name" formControlName="UserName">
-        <p class="invalid-message" *ngIf="username.touched && username.invalid">{{ userNameInvalidMessage() }}</p>
+        <p class="invalid-message" *ngIf="(username.touched && username.invalid) || (clicked && username.invalid)">{{ userNameInvalidMessage() }}</p>
         <label for="password">password</label>
         <input type="text" name="password" placeholder="password" formControlName="Password">
-        <p class="invalid-message" *ngIf="password.touched && password.invalid">{{ passworsInvalidMessage() }}</p>
+        <p class="invalid-message" *ngIf="(password.touched && password.invalid) || (clicked && password.invalid)">{{ passworsInvalidMessage() }}</p>
         <button type="button" (click)="onSubmit()">login</button>
         <div class="singup-link">
             <p>not sign up yet?</p>

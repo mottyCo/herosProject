@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,AbstractControl,Validators, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
   export class LoginComponent implements OnInit{
-    constructor(private router: Router){}
+    disaplayIncorrectMessage = false
+    incorrectMessage = 'incorrect user or incorrect password'
+    clicked = false
+    constructor(private router: Router, private users : UsersService, ){}
     loginForm!: FormGroup;
     username!: AbstractControl;
     password!: AbstractControl;
@@ -22,8 +26,23 @@ import { Router } from '@angular/router';
     this.password = this.loginForm.get('Password') as AbstractControl;
   }
   onSubmit(){
-    console.log('submit');
-    
+    if(!this.loginForm.invalid){
+      for (let i = 0; i < this.users.users.length; i++) {
+        if(this.username.value === this.users.users[i].userName && this.password.value === this.users.users[i].password){
+          this.users.localUser = this.users.users[i]
+          this.router.navigate(['user/localUser'])
+          return null
+        }
+        if(i+1 === this.users.users.length){
+          this.disaplayIncorrectMessage = true
+          return null
+        }  
+      }
+    }else{
+      this.clicked = true
+      return null
+    }
+    return null
   }
   userNameInvalidMessage(): string | undefined{
     const errors: any = this.username.errors;

@@ -12,5 +12,6 @@ export class HeroCardComponent {
   @Input() heroname! : string
   @Input() heroImageUrl! : string
   @Input() heroQuote! : string
+  @Input() heroStars! : number
 
 }

@@ -7,13 +7,18 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { UsersSectionComponent } from './components/users-section/users-section.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { LocalUserSectionComponent } from './components/local-user-section/local-user-section.component';
+import { loginGuardGuard } from './guards/login-guard.guard';
+import { userSectionGuard } from './guards/user-section.guard';
 
 export const routes: Routes = [
   {path: 'heros-collection', component: CardsCollectionComponent},
   {path: 'user', component: UserSectionComponent, children: [
-    {path: 'login', component: LoginComponent},
-    {path: 'signup', component: SignupComponent},
-    {path: '**', component: LoginComponent}
+    {path: 'login', component: LoginComponent, canActivate: [userSectionGuard]},
+    {path: 'signup', component: SignupComponent,canActivate: [userSectionGuard]},
+    {path: 'localUser', component: LocalUserSectionComponent, canActivate: [loginGuardGuard]},
+    {path: '', redirectTo: 'localUser', pathMatch: 'full'},
+    {path: '**', component: PageNotFoundComponent}
   ]},
   {path: 'users', component: UsersSectionComponent, pathMatch: 'full'},
   {path: 'settings', component: SettingsComponent},

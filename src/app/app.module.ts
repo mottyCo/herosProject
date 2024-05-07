@@ -15,6 +15,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { LocalUserSectionComponent } from './components/local-user-section/local-user-section.component';
+import { CollectionBarCardComponent } from './components/collection-bar-card/collection-bar-card.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { SignupComponent } from './components/signup/signup.component';
     HeroCardComponent,
     LoginComponent,
     SignupComponent,
+    LocalUserSectionComponent,
+    CollectionBarCardComponent,
 
   ],
   imports: [

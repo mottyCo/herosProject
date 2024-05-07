@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,AbstractControl,Validators, ValidationErrors, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersService } from '../../services/users.service';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent implements OnInit{
-  constructor(private router: Router, private fb: FormBuilder){}
+  clicked = false
+  constructor(private router: Router, private fb: FormBuilder, private users : UsersService){}
   loginForm!: FormGroup;
   username!: AbstractControl;
   email!: AbstractControl;
@@ -28,7 +31,14 @@ ngOnInit(): void {
   this.repeatPassword = this.loginForm.get('RepeatPassword') as AbstractControl;
 }
 onSubmit(){
-  console.log('submit');
+  if(!this.loginForm.invalid){
+    this.users.localUser = new User(this.username.value, this.email.value, this.password.value)
+    this.router.navigate(['user/localUser'])
+    
+    
+  }else{
+    this.clicked = true
+  }
 }
 userNameInvalidMessage(): string | undefined{
   const errors: any = this.username.errors;
