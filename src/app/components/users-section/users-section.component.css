@@ -73,3 +73,8 @@ p{
 .card-container:last-child{
     margin-right: auto;
 }
+@media screen and (max-width: 769px){
+    .container{
+        width: 100vw;
+    }
+}

@@ -58,3 +58,36 @@
 .active:hover{
     opacity: 1;
 }
+@media screen and (max-width: 769px){
+    :host{
+        height: 5rem;
+        width: 100vw;
+    }
+    .nav{
+        height: 5rem;
+        width: 100vw;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center;
+    }
+    .top-nav{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center;
+    }
+    .settings-link{
+        margin-left: 1rem;
+        margin-bottom: 0rem;
+    }
+    .top-nav-link{
+        margin-top: 0;
+    }
+    .link{
+        margin-right: 1rem;
+    }
+}
+    

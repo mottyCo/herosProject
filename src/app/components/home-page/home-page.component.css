@@ -17,3 +17,11 @@
     height: 100%;
     margin-left: 5rem;
 }
+@media screen and (max-width: 769px){
+    .primary-section{
+        width: 100vw;
+        height: calc(100vh - 5rem);
+        margin: 0%;
+        margin-top: 5rem;
+    }
+}

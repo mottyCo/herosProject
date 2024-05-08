@@ -99,3 +99,18 @@ span{
     cursor: not-allowed;
     opacity: 0.5;
 }
+@media screen and (max-width: 769px){
+    .global-cards-collection-bar,
+    .user-cards-collection-bar{
+        padding: 0;
+        max-width: 100vw;
+    }
+    :host{
+        width: 100vw;
+        height: 100vh;
+        
+    }
+    .container{
+        width: 100vw;
+    }
+}

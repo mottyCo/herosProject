@@ -14,12 +14,9 @@ export class UsersSectionComponent implements OnInit{
     this.usersArray = this.users.users
   }
   displayUserCard(user : User){
-    this.correntUser = user
-    console.log(this.correntUser.heros);
-    
+    this.correntUser = user 
   }
   ngOnInit(){
-    console.log(this.users.localUser?.heros);
-    
+ 
   }
 }

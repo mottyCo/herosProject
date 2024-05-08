@@ -21,7 +21,7 @@
                     <app-collection-bar-card class="single-card user-cards"  [heroname]="hero.name" [heroImageUrl]="'../../../assets/images/' + hero.image"  (click)="makePrimaryCard(hero)"></app-collection-bar-card>
                 </div>
             </div>
-            
         </div>
     </div>
+    <app-modal-error *ngIf="isModalDisplay" (closeModal)="isModalDisplay=false"></app-modal-error>
 </div>

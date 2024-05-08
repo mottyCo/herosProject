@@ -30,3 +30,6 @@ button:hover{
     cursor: pointer;
     opacity: 0.5;
 }
+@media screen and (max-width: 769px){
+    
+}

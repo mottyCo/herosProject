@@ -9,6 +9,7 @@ import { Hero } from '../../interfaces/hero';
   styleUrl: './local-user-section.component.css'
 })
 export class LocalUserSectionComponent {
+  isModalDisplay = false
   userName = this.users.localUser?.userName
   globalHerosCollection!: Hero[]
   userHerosCollection!: Hero[] 
@@ -34,7 +35,6 @@ export class LocalUserSectionComponent {
     for(let hero of this.globalHerosCollection){
       if(hero.name === heroName){
         this.userHerosCollection.push(new Hero(hero.name, hero.quote, hero.image))
-        console.log(this.users.localUser?.heros);
         return null
       }
     }
@@ -69,9 +69,15 @@ export class LocalUserSectionComponent {
     this.correcrHeroStars = this.primaryHero.stars
   }
   trainHero(){
-   if(this.primaryHero != null && this.primaryHero.stars < 5){
-    this.primaryHero.stars++
-    this.correcrHeroStars = this.primaryHero.stars
+   if(this.primaryHero != null && this.primaryHero.stars < 5 ){
+    if(this.users.localUser != undefined && this.users.localUser?.trainsToday < 5){
+      this.primaryHero.stars++
+      this.correcrHeroStars = this.primaryHero.stars
+      this.users.localUser.trainsToday++
+    }else if(this.users.localUser != undefined && this.users.localUser?.trainsToday === 5){
+
+      this.isModalDisplay = true
+     }
    }
   }
   isHeroMaxStars(){
@@ -79,4 +85,5 @@ export class LocalUserSectionComponent {
       return true
     return false
   }
+
 }

@@ -33,6 +33,7 @@ ngOnInit(): void {
 onSubmit(){
   if(!this.loginForm.invalid){
     this.users.localUser = new User(this.username.value, this.email.value, this.password.value)
+    this.users.users.push(this.users.localUser)
     this.router.navigate(['user/localUser'])
     
     
