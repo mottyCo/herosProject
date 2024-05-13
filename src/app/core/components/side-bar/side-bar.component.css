@@ -17,17 +17,17 @@
     opacity: 0.3;
 }
 .user-image-link{
-    background-image: url('../../icons/user-circle.svg');  
+    background-image: url('../../../icons/user-circle.svg');  
 }
 .all-card-collection-link{
-    background-image: url('../../icons/cards-three.svg');
+    background-image: url('../../../icons/cards-three.svg');
     transform: rotate(90deg);
 }
 .users-collection-link{
-    background-image: url('../../icons/users-three.svg');
+    background-image: url('../../../icons/users-three.svg');
 }
 .settings-link{
-    background-image: url('../../icons/gear.svg');
+    background-image: url('../../../icons/gear.svg');
     margin-bottom: 2rem;
 }
 .nav{

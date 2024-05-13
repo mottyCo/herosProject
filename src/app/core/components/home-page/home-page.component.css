@@ -2,7 +2,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url('../../../assets/images/homeBackground.jpg');
+    background-image: url('../../../../assets/images/homeBackground.jpg');
     background-repeat: no-repeat; 
     background-size: cover;
 }
@@ -17,6 +17,7 @@
     height: 100%;
     margin-left: 5rem;
 }
+
 @media screen and (max-width: 769px){
     .primary-section{
         width: 100vw;

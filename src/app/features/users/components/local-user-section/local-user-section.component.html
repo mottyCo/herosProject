@@ -1,0 +1,27 @@
+<div class="container">
+    <div>
+        <div class="global-cards-collection-bar">
+            <div class="cards-area" *ngFor="let hero of service.localUser_globalHerosCollection">
+                <app-collection-bar-card class="single-card"  [heroname]="hero.name" [heroImageUrl]="'../../../assets/images/' + hero.image"></app-collection-bar-card>
+                <button *ngIf="!service.isUserOwnThisCard(hero)" class="plus-btn btn" (click)="service.addHeroIntoUserCollection(hero.name)">+</button>
+                <button *ngIf="service.isUserOwnThisCard(hero)" class="minus-btn btn" (click)="service.removeHeroFromUserCollection(hero)">--</button>
+            </div>
+        </div>
+        <!-- <span></span> -->
+    </div>
+    <div class="primary-card-section">
+        <app-hero-card *ngIf="service.localUser_correctHeroName !== ''" class="mid-height"[heroname]="service.localUser_correctHeroName" [heroQuote]="service.localUser_correctHeroquote" [heroImageUrl]="'../../../assets/images/' + service.localUser_correctHeroimage" [heroStars]="service.localUser_correcrHeroStars"></app-hero-card>
+        <button [disabled]="service.isHeroMaxStars()" class="train-button" *ngIf="service.localUser_correctHeroName !== ''" (click)="service.trainHero()" >train hero</button>
+    </div>
+    <div class="user-cards-collection">
+        <div>
+            <!-- <span *ngIf="userHerosCollection.length !== 0"></span> -->
+            <div class=" user-cards-collection-bar">
+                <div class="cards-area user-cards" *ngFor="let hero of service.localUser_userHerosCollection">
+                    <app-collection-bar-card class="single-card user-cards"  [heroname]="hero.name" [heroImageUrl]="'../../../assets/images/' + hero.image"  (click)="service.makePrimaryCard(hero)"></app-collection-bar-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-modal-error *ngIf="service.localUser_isModalDisplay" (closeModal)="service.localUser_isModalDisplay=false"></app-modal-error>
+</div>

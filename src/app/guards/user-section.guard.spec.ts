@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { UsersService } from '../services/users.service';
+import { UsersService } from '../core/services/users.service';
 
 export const userSectionGuard: CanActivateFn = (route, state) => {
   console.log('here');

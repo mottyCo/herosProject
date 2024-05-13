@@ -6,3 +6,9 @@ app-side-bar{
     position: fixed;
     height: 100vh;
 }
+@media screen and (max-width: 769px){
+    app-side-bar{
+        height: 5rem;
+        width: 100vw;
+    }
+}
