@@ -27,16 +27,8 @@ import { UsersService } from '../../../../core/services/users.service';
   }
   onSubmit(){
     if(!this.loginForm.invalid){
-      for (let i = 0; i < this.users.users.length; i++) {
-        if(this.username.value === this.users.users[i].userName && this.password.value === this.users.users[i].password){
-          this.users.localUser = this.users.users[i]
-          this.router.navigate(['user/localUser'])
-          return null
-        }
-        if(i+1 === this.users.users.length){
-          this.disaplayIncorrectMessage = true
-          return null
-        }  
+      if(this.users.canUserLogIn(this.username.value, this.password.value) === false){
+        this.disaplayIncorrectMessage = true
       }
     }else{
       this.clicked = true

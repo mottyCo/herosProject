@@ -1,12 +1,12 @@
 <h2>the most legendary worriors of westeros</h2>
 <div class="cards-section">
-    <div (click)="service.showPreviousHero()" class="cards-button">
+    <div (click)="showPreviousHero()" class="cards-button">
         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#fff" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
     </div>
-    <app-hero-card class="small-card max-height" [heroname]="service.previousheroname" [heroImageUrl]="service.previousheroImageUrl" [heroQuote]="service.previousheroQuote" [heroStars]="0"></app-hero-card>
-    <app-hero-card class="max-height" [heroname]="service.correntheroname" [heroImageUrl]="service.correntheroImageUrl" [heroQuote]="service.correntheroQuote" [heroStars]="0"></app-hero-card>
-    <app-hero-card class="small-card max-height" [heroname]="service.nextheroname" [heroImageUrl]="service.nextheroImageUrl" [heroQuote]="service.nextheroQuote" [heroStars]="0"></app-hero-card>
-    <div (click)="service.showNextHero()" class="cards-button">
+    <app-hero-card class="small-card max-height" [heroname]="previousheroname" [heroImageUrl]="previousheroImageUrl" [heroQuote]="previousheroQuote" [heroStars]="0"></app-hero-card>
+    <app-hero-card class="max-height" [heroname]="correntheroname" [heroImageUrl]="correntheroImageUrl" [heroQuote]="correntheroQuote" [heroStars]="0"></app-hero-card>
+    <app-hero-card class="small-card max-height" [heroname]="nextheroname" [heroImageUrl]="nextheroImageUrl" [heroQuote]="nextheroQuote" [heroStars]="0"></app-hero-card>
+    <div (click)="showNextHero()" class="cards-button">
         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#fff" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg>
     </div>
 </div>
